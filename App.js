@@ -4,10 +4,10 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator, createAppContainer} from 'react-navigation';  
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';  
 import Icon from 'react-native-vector-icons/Ionicons'; 
-import Profile from './screens/Profile';
+import Status from './screens/Status';
 import Home from './screens/Home';
-import Favourite from './screens/Favourite';
-import AddToCard from './screens/AddToCard';
+import Plant from './screens/NavigationPlant';
+import Notification from './screens/Notification';
 
 function App() {
   return (
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
 const TabNavigator = createMaterialBottomTabNavigator(  
   {  
       Home: { screen: Home,  
+        
           navigationOptions:{  
               tabBarLabel:'Home',  
               tabBarIcon: ({ tintColor }) => (  
@@ -37,24 +38,24 @@ const TabNavigator = createMaterialBottomTabNavigator(
                   </View>),  
           }  
       },  
-      Profile: { screen: Profile,  
+    //   Profile: { screen: Status,  
+    //       navigationOptions:{  
+    //           tabBarLabel:'Status',  
+    //           tabBarIcon: ({ tintColor }) => (  
+    //               <View>  
+    //                   <Icon style={[{color: tintColor}]} size={25} name={'menu'}/>  
+    //               </View>),  
+    //           activeColor:   '#f0edf6',  
+    //           inactiveColor: '#226557',  
+    //           barStyle: { backgroundColor: 'black' },  
+    //       }  
+    //   },  
+      Image: { screen: Plant,  
           navigationOptions:{  
-              tabBarLabel:'Profile',  
+              tabBarLabel:'Plant',  
               tabBarIcon: ({ tintColor }) => (  
                   <View>  
-                      <Icon style={[{color: tintColor}]} size={25} name={'ios-person'}/>  
-                  </View>),  
-              activeColor:   '#f0edf6',  
-              inactiveColor: '#226557',  
-              barStyle: { backgroundColor: 'black' },  
-          }  
-      },  
-      Image: { screen: Favourite,  
-          navigationOptions:{  
-              tabBarLabel:'Favourite',  
-              tabBarIcon: ({ tintColor }) => (  
-                  <View>  
-                      <Icon style={[{color: tintColor}]} size={25} name={'ios-heart'}/>  
+                      <Icon style={[{color: tintColor}]} size={25} name={'menu'}/>  
                   </View>),  
               activeColor:   '#f0edf6',  
               inactiveColor: '#226557',  
@@ -62,12 +63,12 @@ const TabNavigator = createMaterialBottomTabNavigator(
           }  
       },  
       Cart: {  
-          screen: AddToCard,  
+          screen: Notification,  
           navigationOptions:{  
-              tabBarLabel:'Add to Card',  
+              tabBarLabel:'Notification',  
               tabBarIcon: ({ tintColor }) => (  
                   <View>  
-                      <Icon style={[{color: tintColor}]} size={25} name={'ios-card'}/>  
+                      <Icon style={[{color: tintColor}]} size={25} name={'notifications'}/>  
                   </View>),  
           }  
       },  
